@@ -13,4 +13,6 @@ CREATE OR REPLACE FUNCTION CALC
               END IF;
               RETURN D;
           END;
-/      
+/     
+SELECT CALC(100,200,'ADD') FROM DUAL;
+
