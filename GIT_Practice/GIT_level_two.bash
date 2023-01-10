@@ -2,7 +2,8 @@
   #Create a new branch in your repository and make changes to it.
   #Merge the changes from the new branch back into the master branch.
   #Push your local repository to a remote repository on a Git hosting service (e.g. GitHub).
-
+  #Delete that new branch in your repository
+  
 $ git branch
 * main
 
