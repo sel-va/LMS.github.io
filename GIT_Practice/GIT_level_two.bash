@@ -3,7 +3,8 @@
   #Merge the changes from the new branch back into the master branch.
   #Push your local repository to a remote repository on a Git hosting service (e.g. GitHub).
   #Delete that new branch in your repository
-  
+        #You no longer need to keep and use that branch, so it is a common best practice to delete it so it doesn't clutter up your code
+			
 $ git branch
 * main
 
