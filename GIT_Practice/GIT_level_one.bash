@@ -1,13 +1,16 @@
-#GIT TASK ONE - clone central repositry then Create one folder then make new file, add, commit, push that.
+#GIT TASK ONE - clone central repositry then Create one folder then make new file, add, commit - soft merge, push that.
+  #Create a new local Git repository and add then remove a file to it.
+  #Clone a remote Git repository to your local machine.
+  #Make changes to a file in your local repository and commit the changes.
+  #Push your local repository to a remote repository on a Git hosting service (e.g. GitHub).
 
 $ git --version
 $ pwd
 #/c/Users/USER
 
-$ git clone https://github.com/sel-va/LMS.github.io.git
-
 $ cd /d/LMS/LMS.github.io/
 
+#Create a new local Git repository and add then remove a file to it.
 $ PWD
 $ ls -lrt
 $ mkdir JAVA
@@ -15,12 +18,18 @@ $ ls -lrt
 $ rm -Rf JAVA
 $ ls -lrt
 
+#Clone a remote Git repository to your local machine.
+$ git clone https://github.com/sel-va/LMS.github.io.git
+
 $ git init
 $ git commit -m "First commit"
 #Author identity unknown
 
 $ git config --global user.name "sel-va"
 $ git config --global user.email "er.ks.selva@gmail.com"
+
+#Create a new local Git repository and add a file to it then
+#Make changes to a file in your local repository and commit the changes.
 
 $ git branch
 $ cd LMS.github.io
@@ -51,5 +60,3 @@ $ git push
 #Everything up-to-date
 $ git log
 $ git log --oneline
-
-
