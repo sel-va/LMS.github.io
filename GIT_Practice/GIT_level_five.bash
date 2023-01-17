@@ -15,7 +15,6 @@ TAG is reference to specific commit. mark specific point in history, usually to 
 		Lightweight tags: git tag <tag-name> <commit-hash>
 		Annotated tags: git tag -a <tag-name> -m <message> <commit-hash>
 
-
 Cherry-pick
 ===========
 	Uses git cherry-pick command to apply the specific commit from branchA to branchB. 
