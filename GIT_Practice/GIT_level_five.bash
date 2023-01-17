@@ -14,11 +14,25 @@ TAG is reference to specific commit. mark specific point in history, usually to 
 	2 types: lightweight & annotated.
 		Lightweight tags: git tag <tag-name> <commit-hash>
 		Annotated tags: git tag -a <tag-name> -m <message> <commit-hash>
+	
+			git tag - create a new tag.
+			git show - view the details of a specific tag.
+			git tag -d - delete a tag.
+			
+git stash to temporarily store changes and switch branches.
+	git stash - store changes in a stash.
+	git stash apply - reapply a stash after it has been deleted.
+	git stash drop - delete a stash.
+	git stash list - view a list of stashes.
+	git stash clear - delete all stashes.
+	git stash branch - create a new branch from a stash.
+	git stash show - view the changes in a stash.
 
 Cherry-pick
 ===========
 	Uses git cherry-pick command to apply the specific commit from branchA to branchB. 
 	Finally, it verifies the changes in branchB by running git log.
+		git cherry - compare the changes between two branches.
 
 	#create new repository
 	git init
