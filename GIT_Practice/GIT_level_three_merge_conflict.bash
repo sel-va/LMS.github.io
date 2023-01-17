@@ -15,7 +15,6 @@ M  GIT_level_one.bash
 $ git commit -m "user1 first commit"
 $ git checkout main
 $ git merge user1
-$ git checkout user1
 $ git checkout user2
 $ git status -s
 ?? GIT_level_two.bash
