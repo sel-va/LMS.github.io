@@ -1,5 +1,7 @@
 #GIT TASK THREE - Make 2 branch, Make conflict merge, REBASE the central repositry
 
+#SIMPLE REBASE
+
 git log --oneline
 
 # create a new branch named branch1
@@ -19,8 +21,20 @@ git add file.txt
 git status -s
 git commit -am "1st commit from branch1"
 
+git checkout main
+git merge branch1
+
 # switch to branch2
 git checkout branch2
+
+git checkout main
+git log --oneline
+
+#use last commit_ID to view last commit details (by whome)
+git show f804ecd
+
+git checkout branch2
+git rebase main
 
 # make some different changes to the same file
 vi file.txt
@@ -29,32 +43,17 @@ vi file.txt
 git add file.txt
 git commit -am "2nd time 1st commit from branch2"
 
-#-------------------------------------------------------------
 git checkout main
-
 git merge branch1
 
-git log --oneline
-
-#use last commit_ID to view last commit details (by whome)
-git show f804ecd
-
-# To rebase we need to switch branch2
-git checkout branch2
-git rebase main
-
-git checkout main
-git merge branch2
-
-git push
----------------------------------------------------------------------------------------
+#-------------------------------------------------------------
 # other way to rebase from commited branch2
 # switch back to branch1
-git checkout branch1
+git checkout branch2
 git branch
 
-# merge branch2 into branch1
-git merge branch2
+# merge branch1 into branch2
+git merge branch1
 
 ---------------------------------------------------------
 #other topic
@@ -62,6 +61,7 @@ git merge branch2
 git pull origin main
 
 -------------------------------------------------------------------------------------------------------------
+
 $ git branch user1
 $ git branch user2
 
@@ -136,3 +136,4 @@ $ git status -s
 $ git rebase --continue
 $ cat tempfile.txt
 
+#------------------------------------------------------------------------------------------------
