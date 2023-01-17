@@ -1,4 +1,0 @@
-text in branch1
-text in branch2
-text 3
-text 4
