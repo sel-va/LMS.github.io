@@ -16,6 +16,7 @@ CREATE OR REPLACE FUNCTION CALC
 /     
 SELECT CALC(100,200,'ADD') FROM DUAL;
 
+/* ------------------------------------------------------------------------- */
 
 /*create print small num 1st */
 
@@ -28,5 +29,8 @@ ELSE DBMS_OUTPUT.PUT_LINE(A ||' '||B);
 END IF;
 END;
 /
+
+/* ------------------------------------------------------------------------- */
+
 
 
