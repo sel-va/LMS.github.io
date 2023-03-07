@@ -1,0 +1,85 @@
+Here is an introduction to MongoDB with some code examples to get you started:
+
+What is MongoDB?
+MongoDB is a document-oriented NoSQL database system that is designed for high availability, scalability, and performance. Instead of storing data in tables like a traditional relational database, MongoDB stores data in flexible JSON-like documents with dynamic schemas, making it well-suited for unstructured and semi-structured data.
+
+Installing MongoDB
+====================
+You can download and install MongoDB Community Edition from the official MongoDB website. Once installed, you can start the MongoDB server using the command "mongod".
+
+
+Creating a Database and Collection
+===================================
+In MongoDB, you don't need to pre-define a schema for your data. To create a database, you can use the "use" command:
+
+	use mydb
+
+This command creates a new database named "mydb". To create a collection within the database, you can use the "db.createCollection" command:
+
+	db.createCollection("users")
+This creates a new collection named "users" within the "mydb" database.
+
+
+Inserting Data
+=================
+To insert data into a collection, you can use the "db.collection.insertOne" or "db.collection.insertMany" command:
+
+	db.users.insertOne({
+	  name: "John",
+	  age: 30,
+	  email: "john@example.com"
+	})
+	
+This inserts a new document into the "users" collection with the specified fields.
+
+	db.users.insertMany([
+	  {
+		name: "Jane",
+		age: 25,
+		email: "jane@example.com"
+	  },
+	  {
+		name: "Bob",
+		age: 35,
+		email: "bob@example.com"
+	  }
+	])
+
+This inserts multiple documents into the "users" collection.
+
+Querying Data
+==============
+To query data from a collection, you can use the "db.collection.find" command:
+		db.users.find()
+This returns all the documents in the "users" collection. You can also use query filters to retrieve specific documents:
+		db.users.find({ name: "John" })
+This returns all the documents in the "users" collection where the "name" field is "John".
+
+Updating Data
+==============
+To update data in a collection, you can use the "db.collection.updateOne" or "db.collection.updateMany" command:
+
+	db.users.updateOne(
+	  { name: "John" },
+	  { $set: { age: 31 } }
+	)
+This updates the document in the "users" collection where the "name" field is "John" and sets the "age" field to 31.
+
+	db.users.updateMany(
+	  { age: { $lt: 30 } },
+	  { $set: { status: "inactive" } }
+	)
+This updates all the documents in the "users" collection where the "age" field is less than 30 and sets the "status" field to "inactive".
+
+
+Deleting Data
+==============
+To delete data from a collection, you can use the "db.collection.deleteOne" or "db.collection.deleteMany" command:
+	db.users.deleteOne({ name: "John" })
+
+This deletes the document from the "users" collection where the "name" field is "John".
+	db.users.deleteMany({ status: "inactive" })
+
+This deletes all the documents from the "users" collection where the "status" field is "inactive".
+
+These are some basic MongoDB operations to get you started. MongoDB has many more advanced features and capabilities, such as aggregation, indexing, and transactions, which you can explore further in the official MongoDB documentation.

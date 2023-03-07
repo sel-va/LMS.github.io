@@ -1,0 +1,45 @@
+MongoDB is a popular NoSQL database system that stores data in JSON-like documents. It provides many features for data retrieval, aggregation, indexing, and transactions. Here's a brief tutorial on these features:
+
+Data retrieval:
+	Data retrieval is the process of fetching data from a database. MongoDB provides several methods to retrieve data from the database:
+	find() method: This method is used to retrieve data from a single collection in MongoDB. It can be used to filter data based on various criteria such as field values, regular expressions, etc.
+		Example: db.collection.find({ field1: value1 })
+
+findOne() method: 
+	This method is used to retrieve a single document from a collection. It returns the first document that matches the specified criteria.
+		Example: db.collection.findOne({ field1: value1 })
+
+count() method: 
+	This method is used to count the number of documents that match a specified criteria.
+		Example: db.collection.count({ field1: value1 })
+
+Aggregation:
+	Aggregation is the process of processing data records and returning computed results. MongoDB provides the following methods for aggregation:
+	aggregate() method: This method is used to aggregate data in a collection. It can perform various operations such as grouping, filtering, and computing.
+		Example: db.collection.aggregate([ { $group: { _id: "$field1", count: { $sum: 1 } } } ])
+
+mapReduce() method: 
+	This method is used to perform complex data processing. It can map data to key-value pairs and reduce them to produce computed results.
+		Example: db.collection.mapReduce( function() { emit(this.field1, this.field2); }, function(key, values) { return Array.sum(values); }, { out: "results" } )
+
+Indexing:
+	Indexing is the process of creating indexes on fields to improve the speed of data retrieval. MongoDB provides the following types of indexes:
+		Single Field Index: This index is created on a single field of a document.
+			Example: db.collection.createIndex({ field1: 1 })
+
+Compound Index: 
+	This index is created on multiple fields of a document.
+		Example: db.collection.createIndex({ field1: 1, field2: -1 })
+
+Text Index: 
+	This index is created on a text field of a document to perform text search.
+		Example: db.collection.createIndex({ field1: "text" })
+
+Transactions:
+	Transactions are used to ensure data consistency and reliability in multi-document operations. MongoDB provides multi-document transactions that support read and write operations. To use transactions, you need to have MongoDB version 4.0 or later.
+		Example:
+		session = client.start_session()
+		with session.start_transaction():
+		db.collection1.update_one({"_id": 1}, {"$set": {"field1": "value1"}})
+		db.collection2.update_one({"_id": 2}, {"$set": {"field2": "value2"}})
+		session.commit_transaction()

@@ -480,6 +480,12 @@ Analytical Functions
 		select first_name , salary , lead(salary,1,4500) over(order by salary desc) as ld_function ,
 		salary - lead(salary,1,4500) over(order by salary desc) as sal_diff from employees;
 
+		SELECT employee_id, first_name, last_name, salary,
+			   LEAD(salary) OVER (ORDER BY employee_id) AS next_salary,
+			   LEAD(salary,2) OVER (ORDER BY employee_id) AS next_salary,
+			   LAG(salary,3,'1000') OVER (ORDER BY employee_id) AS prev_salary
+		FROM employees;
+		
 		select first_name , salary , lag(salary,1) over(order by salary desc) from employees;
 
 		select * from(
